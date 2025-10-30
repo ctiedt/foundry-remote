@@ -13,7 +13,18 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Gtk, Adw
 
-class SimpleAction(ActionBase):
+class BeginCombatAction(ActionBase):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+    def on_ready(self) -> None:
+        icon_path = os.path.join(self.plugin_base.PATH, "assets", "sword.png")
+        self.set_media(media_path=icon_path, size=0.75)
+        
+    def on_key_down(self) -> None:
+        self.plugin_base.queue.put("begin_combat")
+
+class EndCombatAction(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
@@ -22,7 +33,5 @@ class SimpleAction(ActionBase):
         self.set_media(media_path=icon_path, size=0.75)
         
     def on_key_down(self) -> None:
-        print("Key down")
-    
-    def on_key_up(self) -> None:
-        print("Key up")
+        self.plugin_base.queue.put("end_combat")
+ 

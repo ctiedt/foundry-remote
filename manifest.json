@@ -1,6 +1,9 @@
 {
-    "version": "",
-    "thumbnail": "",
-    "id": "",
-    "name": ""
+  "version": "0.1",
+  "thumbnail": "thumb.png",
+  "id": "dev_tiedt_foundry-remote",
+  "name": "FoundryVTT Remote",
+  "app-version": "1.5.0",
+  "author": "ctiedt",
+  "github": "https://github.com/ctiedt/foundry-remote"
 }
