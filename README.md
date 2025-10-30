@@ -1,5 +1,3 @@
-# PluginTemplate
+# FoundryVTT Remote
 
-A simple plugin you can use as a starting point for your amazing creations!
-
-For more information checkout [the docs](https://streamcontroller.github.io/docs/latest/).
+A plugin for controlling music and combat on FoundryVTT.
